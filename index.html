@@ -13,46 +13,39 @@
 
     <!-- nottification push ke liye -->
 
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
     <script>
-        window.OneSignal = window.OneSignal || [];
-        OneSignal.push(function() {
-            OneSignal.init({
+        window.OneSignalDeferred = window.OneSignalDeferred || [];
+        OneSignalDeferred.push(async function(OneSignal) {
+            await OneSignal.init({
                 appId: "2d2a2b08-65da-484e-ace6-5c7fa0cd801d",
-                serviceWorkerPath: "/OneSignalSDKWorker.js",
-                serviceWorkerUpdaterPath: "/OneSignalSDKUpdaterWorker.js",
-                notifyButton: {
-                    enable: true,
-                    position: "bottom-right",
-                    size: "medium",
-                    theme: "default",
-                    text: {
-                        "tip.state.unsubscribed": "नोटिफिकेशन सब्सक्राइब करें",
-                        "tip.state.subscribed": "सब्सक्राइब हो गया!",
-                        "message.action.subscribed": "सब्सक्राइब करने के लिए धन्यवाद!",
-                        "message.action.resubscribed": "फिर से सब्सक्राइब करने के लिए धन्यवाद!",
-                        "dialog.main.title": "नोटिफिकेशन सब्सक्राइब करें",
-                        "dialog.main.button.subscribe": "सब्सक्राइब करें",
-                        "dialog.main.button.message": "हमारी वेबसाइट से नवीनतम अपडेट प्राप्त करें"
+                promptOptions: {
+                    slidedown: {
+                        prompts: [
+                            {
+                                type: "push",
+                                autoPrompt: true,
+                                text: {
+                                    actionMessage: "Madrasa Sikariya से नवीनतम अपडेट प्राप्त करें",
+                                    acceptButton: "हां",
+                                    cancelButton: "नहीं"
+                                },
+                                delay: {
+                                    pageViews: 1,
+                                    timeDelay: 20
+                                }
+                            }
+                        ]
                     }
+                },
+                welcomeNotification: {
+                    title: "Madrasa Sikariya",
+                    message: "नवीनतम अपडेट के लिए धन्यवाद!"
                 }
             });
         });
     </script>
 
-    <!-- <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
-
-    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-<script>
-  window.OneSignalDeferred = window.OneSignalDeferred || [];
-  OneSignalDeferred.push(async function(OneSignal) {
-    await OneSignal.init({
-      appId: "2d2a2b08-65da-484e-ace6-5c7fa0cd801d",
-    });
-  });
-</script> -->
-
-    
     <!-- PWA related meta tags -->
     <meta name="theme-color" content="#1a3a6d">
     <meta name="description" content="Welcome to Madrasa Sikariya - Islamic education and community center">
