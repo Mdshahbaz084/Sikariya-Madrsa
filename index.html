@@ -14,29 +14,31 @@
     <!-- nottification push ke liye -->
 
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
-<script>
-  window.OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "2d2a2b08-65da-484e-ace6-5c7fa0cd801d", // ⚠️ Yahan apna OneSignal App ID daalein
-      // serviceWorkerPath: "/OneSignalSDKWorker.js",
-      // serviceWorkerUpdaterPath: "/OneSignalSDKUpdaterWorker.js",
-        serviceWorkerPath: "/Sikariya-Madrsa/OneSignalSDKWorker.js",
-  serviceWorkerUpdaterPath: "/Sikariya-Madrsa/OneSignalSDKUpdaterWorker.js"
-      notifyButton: {
-        enable: true, 
-        position: "bottom-right", 
-        size: "medium", 
-        theme: "default",
-        text: {
-          "tip.state.unsubscribed": "Subscribe karein",
-          "tip.state.subscribed": "Subscribed!",
-          "message.action.subscribed": "Thanks for subscribing!"
-        }
-      }
-    });
-  });
-</script>
+    <script>
+        window.OneSignal = window.OneSignal || [];
+        OneSignal.push(function() {
+            OneSignal.init({
+                appId: "2d2a2b08-65da-484e-ace6-5c7fa0cd801d",
+                serviceWorkerPath: "/OneSignalSDKWorker.js",
+                serviceWorkerUpdaterPath: "/OneSignalSDKUpdaterWorker.js",
+                notifyButton: {
+                    enable: true,
+                    position: "bottom-right",
+                    size: "medium",
+                    theme: "default",
+                    text: {
+                        "tip.state.unsubscribed": "नोटिफिकेशन सब्सक्राइब करें",
+                        "tip.state.subscribed": "सब्सक्राइब हो गया!",
+                        "message.action.subscribed": "सब्सक्राइब करने के लिए धन्यवाद!",
+                        "message.action.resubscribed": "फिर से सब्सक्राइब करने के लिए धन्यवाद!",
+                        "dialog.main.title": "नोटिफिकेशन सब्सक्राइब करें",
+                        "dialog.main.button.subscribe": "सब्सक्राइब करें",
+                        "dialog.main.button.message": "हमारी वेबसाइट से नवीनतम अपडेट प्राप्त करें"
+                    }
+                }
+            });
+        });
+    </script>
 
     <!-- <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
 
